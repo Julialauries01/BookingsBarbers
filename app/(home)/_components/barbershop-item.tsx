@@ -44,9 +44,13 @@ router.push(`/barbershops/${barbershop.id}`)
          />
 </div>
  <div className="px-2 pb-3">
- <h2 className="font-bold mt-2 overflow-hidden text-ellipsis text-nowrap">{barbershop.name}
+ <h2 className="font-bold mt-2 overflow-hidden text-ellipsis text-nowrap">
+ {barbershop.name.length > 13 ? `${barbershop.name.substring(0, 13)}...` : barbershop.name}
+
          </h2>
-         <p className="text-sm text-gray-400 overflow-hidden text-ellipsis text-nowrap">{barbershop.address}</p>
+         <p className="text-sm text-gray-400 overflow-hidden text-ellipsis text-nowrap">
+         {barbershop.address.length > 15 ? `${barbershop.address.substring(0, 15)}...` : barbershop.address}
+</p>
          <Button className="w-full mt-3" variant="secondary" onClick={handleBookingClick}>
          Reservar
          </Button>
